@@ -33,4 +33,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --cov-report xml --cov messageboxex
+        apt-get update
+        apt-get install -y libegl1 libgl1 libx11-6 libxcb1 libxrandr2 libxkbcommon0 libxi6 xvfb
+        xvfb-run pytest --cov-report xml --cov messageboxex
+
